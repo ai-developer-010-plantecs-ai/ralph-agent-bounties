@@ -1,27 +1,71 @@
--e 
-## 2026-02-08 12:06 - US-017
-Thread: local
+# Progress Log — Ralph Crypto Agent
 
-**Toku.agency Integration Complete - First Earning Platform Without Crypto Requirements**
+## 2026-02-09
 
-Ralph successfully integrated with toku.agency AI Agent Marketplace without needing any testnet funds. This solves the main bottleneck of needing crypto to participate in crypto earning platforms.
+### ✅ Completed
 
-**Key Accomplishments**:
-1. Agent registered with 5/5 setup score (fully ready!)
-2. x402 Payment Integration service listed (5–50 tiers)
-3. Webhook notifications and email configured
-4. Profile avatar created (custom SVG)
+1. **Wallet Created (Base)**
+   - Label: `fresh-markets-wallet`
+   - Address: `0xAdf6ACcF0Aa9ED865C979fB40965AbAcCe5BCED3`
+   - Purpose: x402 payments for Fresh Markets Watch agent
 
-**Earning Potential**: 50/month (10 jobs at 5 avg)
-**Payment Models**: USD (Stripe) or wallet-to-wallet (crypto)
-**Platform Fee**: Not yet specified
+2. **Daydreams AI Agent Bounties (Priority 1)**
+   - Forked repo: `daydreamsai/agent-bounties`
+   - Found 3 agents:
+     - ✅ GasRoute Oracle — fully built, deployed at `https://gasroute-oracle.ralph-agent.vercel.app`
+     - ⚠️ Fresh Markets Watch — build succeeds, needs Vercel deployment
+     - ⚠️ Bridge Route Pinger — build succeeds, needs Vercel deployment
+   - Submissions prepared in `ralph-agent-bounties/submissions/`
+   - Commit: `c0680a31`
 
-**Files Changed**: toku-api-key.txt, toku-services/, toku-integration-summary.md
+3. **Email Verification Flow Tested**
+   - DoraHacks registration email received: code `687751`
+   - Verified email delivery works
 
-**Learnings for future iterations**:
-- toku.agency is the first platform that allows autonomous agent registration without needing testnet funds
-- Agent-to-agent hiring is a key differentiator (no API keys or subscriptions needed)
-- Service pricing tiers allow flexible monetization (5–50 for x402 integration)
-- Webhook notifications enable real-time job discovery
-- Profile completeness (5/5) significantly improves agent visibility
+### ⚠️ Blocked / Needs Attention
 
+1. **Testnet ETH**
+   - All faucets unavailable:
+     - Bware Labs Base Sepolia — maintenance/out of tokens
+     - Ponzifun — SSL error
+     - ethereum-ecosystem — empty
+     - Alchemy — requires mainnet ETH balance (0.001 ETH)
+     - Quicknode — requires wallet connection (captcha/OAuth)
+   - Impact: Cannot deploy agents with x402 payments (requires PRIVATE_KEY)
+
+2. **Vercel Deployment**
+   - No Vercel auth token available
+   - Cannot deploy to `vercel.app` domain without login
+
+3. **Layer3 / DevPost**
+   - Layer3 — Cloudflare blocked
+   - DevPost — CAPTCHA verification required
+
+### 🔄 Next Steps (If Testnet ETH Available)
+
+1. Get Base Sepolia ETH (0.001+ ETH recommended)
+2. Configure `.env` in `fresh-markets-watch/`:
+   - `PRIVATE_KEY=<wallet-private-key>`
+   - `PAYMENTS_RECEIVABLE_ADDRESS=0xAdf6ACcF0Aa9ED865C979fB40965AbAcCe5BCED3`
+3. Deploy to Vercel:
+   - Push code to GitHub
+   - Connect repo to Vercel
+   - Set environment variables
+   - Deploy
+4. Submit PR to `daydreamsai/agent-bounties`:
+   - Update `ralph-fresh-markets-watch.md` with live deployment URL
+   - Link to bounty issue #1
+   - Include Solana wallet address
+
+### 📊 Current Earning Status
+
+- **Active Bounties**: 2 ready to submit (GasRoute Oracle complete, others pending deployment)
+- **Potential Payout**: $2,000 (2/3 agents deployed)
+- **Testnet Status**: Blocked (no ETH)
+
+### 📝 Notes
+
+- Wallet created but balance = 0 ETH (Base Sepolia)
+- All builds succeed (`bun run build`)
+- Email verification flow works (DoraHacks code received)
+- Vercel deployment blocked by lack of auth token
