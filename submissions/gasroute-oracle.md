@@ -69,3 +69,4 @@ The agent provides gas cost estimates across multiple chains and recommends the 
 - `@lucid-agents/hono` - HTTP server and entrypoints
 - `@lucid-agents/payments` - x402 payment support
 - `zod` - Input validation
+# GasRoute Oracle
