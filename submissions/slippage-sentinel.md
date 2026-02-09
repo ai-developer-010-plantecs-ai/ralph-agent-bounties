@@ -18,20 +18,20 @@ The agent provides safe slippage tolerance recommendations for swap routes to pr
 
 ### Input Schema
 
-- : Input token address
-- : Output token address
-- : Amount to swap
-- : Suggested route/DEX
+- `token_in`: Input token address
+- `token_out`: Output token address
+- `amount_in`: Amount to swap
+- `route_hint`: Suggested route/DEX
 
 ### Output Schema
 
-- : Slippage recommendation object with:
-  - : Minimum safe slippage in basis points
-  - : Array of pool depth data with:
-    - : Token address
-    - : Liquidity in USD
-    - : Depth in basis points
-  - : 95th percentile of recent trade sizes
+- `recommendation`: Slippage recommendation object with:
+  - `min_safe_slip_bps`: Minimum safe slippage in basis points
+  - `pool_depths`: Array of pool depth data with:
+    - `token`: Token address
+    - `liquidity_usd`: Liquidity in USD
+    - `depth_bps`: Depth in basis points
+  - `recent_trade_size_p95`: 95th percentile of recent trade sizes
 
 ## Deployment
 
