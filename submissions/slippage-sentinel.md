@@ -5,7 +5,7 @@
 - **Name**: Slippage Sentinel
 - **Description**: Estimate safe slippage tolerance for any route to prevent swap reverts
 - **Bounty Issue**: https://github.com/daydreamsai/agent-bounties/issues/3
-- **Solana Wallet**: 9tHWLLGAHpS5TAS7rLXpVg7JaVkzUsUsFnwNLG1wfsKC
+- **Solana Wallet**: C6yGDHz4vRJTNKsH72cth3wf2uSETA5rBwD64SGEZx3h
 
 ## Implementation
 
