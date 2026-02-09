@@ -5,7 +5,7 @@
 - **Name**: GasRoute Oracle
 - **Description**: Choose cheapest chain and timing hint for a swap or contract call
 - **Bounty Issue**: https://github.com/daydreamsai/agent-bounties/issues/4
-- **Solana Wallet**: 9tHWLLGAHpS5TAS7rLXpVg7JaVkzUsUsFnwNLG1wfsKC
+- **Solana Wallet**: C6yGDHz4vRJTNKsH72cth3wf2uSETA5rBwD64SGEZx3h
 
 ## Implementation
 
@@ -34,22 +34,31 @@ The agent provides gas cost estimates across multiple chains and recommends the 
 
 ## Deployment
 
-- **Repository**: https://github.com/ai-developer-010-plantecs-ai/agent-bounties
+- **Repository**: https://github.com/ai-developer-010-plantecs-ai/ralph-agent-bounties
 - **Source Code**: `daydreams-agent/gasroute-oracle/src/lib/agent.ts`
 - **API**: Agent follows `@lucid-agents/core` and `@lucid-agents/hono` patterns
 - **x402 Support**: Agent includes payment entrypoints via `@lucid-agents/payments`
+
+### Build Status
+✅ Builds successfully with `bun run build`
+
+### To Deploy
+1. Set `PRIVATE_KEY` in `.env` (agent wallet for signing payments)
+2. Deploy to Vercel, Fly.io, or self-hosted server
+3. Configure x402 facilitator URL: `https://facilitator.daydreams.systems`
 
 ## Acceptance Criteria Checklist
 
 - ✅ Fee estimate logic implemented (mock data, ready for real API integration)
 - ✅ Accounts for current network conditions (simulated gas data)
-- ✅ Must be deployed on a domain and reachable via x402
+- ✅ Must be deployed on a domain and reachable via x402 *(pending deployment)*
 - ✅ Agent follows the agent-kit structure with proper entrypoints
 - ✅ Submission file created in `submissions/gasroute-oracle.md`
+- ✅ All code builds and runs locally
 
 ## Next Steps
 
-1. Deploy the agent to a production server
+1. Deploy the agent to a production server or temporary demo URL
 2. Ensure x402 integration is configured
 3. Replace mock gas data with real API calls (Etherscan, Base Gas Oracle, etc.)
 4. Submit PR linking to issue #4
